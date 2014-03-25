@@ -14,6 +14,7 @@
     <!-- Loading Flat UI -->
     <link href="{% static 'css/flat-ui.css' %}" rel="stylesheet">
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fonts.css' %}" rel="stylesheet">
  
     <!-- Uncomment if you are specifically targeting less enabled mobile browsers
     <link rel="stylesheet" media="handheld" href="css/handheld.css?v=1">  -->
@@ -43,5 +44,10 @@
     <script src="{% static 'js/flatui-radio.js' %}"></script>
     <script src="{% static 'js/jquery.tagsinput.js' %}"></script>
     <script src="{% static 'js/jquery.placeholder.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </body>
 </html>
