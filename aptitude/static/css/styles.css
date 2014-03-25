@@ -1,0 +1,55 @@
+.picture{
+	border: 1px solid #ccc;
+	position: relative;
+	display: inline-block;
+	margin-bottom: .5em
+}
+.picture img{
+	max-width: 100%;
+}
+.picture span{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: .2em 1em;
+	font-size: .8em;
+	background-color: rgba(255,255,255,.5);
+	display: inline-block;
+}
+
+h1{
+	font-size: 1.4em;
+	margin-top:0;
+}
+
+dl{
+	font-size: .8em;
+}
+dt dt{
+	font-weight: bold;
+}
+
+dt{
+	float:left;
+	margin-right: 5px;
+}
+dt:after{
+	content: ':';
+}
+
+.aptitude{
+	clear:both;
+}
+.aptitude .progress{
+	width: 60%;
+	float:left;
+	margin-top: 6px;
+	margin-right: 10px;
+}
+.aptitude .name{
+	width: 30%;
+	display: inline-block;
+	margin-bottom: 20px;
+	font-size: .8em;
+	float: left;
+}
