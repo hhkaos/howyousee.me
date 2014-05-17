@@ -1,0 +1,22 @@
+{
+	"actitudes":[
+		{
+			"name": "HTML5",
+			"value": "80%"
+		},
+		{
+			"name": "AngularJS",
+			"value": "60%"
+		}
+	],
+	"aptitudes":[
+		{
+			"name": "Optimista",
+			"value": "90%"
+		},
+		{
+			"name": "Extrovertido",
+			"value": "30%"
+		}
+	]
+}

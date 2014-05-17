@@ -21,6 +21,7 @@
  
     <!-- !Modernizr - All other JS at bottom 
     <script src="js/modernizr-1.5.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 </head>
  
 <body>
@@ -44,6 +45,31 @@
     <script src="{% static 'js/flatui-radio.js' %}"></script>
     <script src="{% static 'js/jquery.tagsinput.js' %}"></script>
     <script src="{% static 'js/jquery.placeholder.js' %}"></script>
+    <script src="http://designmodo.github.io/Flat-UI/js/application.js"></script>
+ <!-- Load JS here for greater good =============================-->
+    <script type="text/javascript">
+      
+        function setSlider(){
+          
+          var $slider = $(".slider:not(.ui-slider)");
+
+          if ($slider.length) {
+            console.log("Me disparo");
+            //debugger;
+            $slider.slider({
+              min: 1,
+              max: 10 ,
+              value: 0,
+              orientation: "horizontal",
+              range: "min"
+            }).addSliderSegments($slider.slider("option").max);
+          }
+        };
+      
+    </script>
+    
+
+    
     <script type="text/javascript">
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();

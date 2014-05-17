@@ -43,7 +43,17 @@ dt:after{
 	cursor: pointer;
 }
 .aptitude{
-	clear:both;
+	clear:left;
+}
+.aptitude.vote > .slider{
+	width: 60%;
+	display:inline-block;
+}
+.aptitude.vote > .name{
+	display: inline-block;
+float: right;
+margin-bottom: 0;
+line-height: .8em;
 }
 .aptitude .progress{
 	width: 60%;
