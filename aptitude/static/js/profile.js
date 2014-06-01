@@ -1,12 +1,21 @@
 (function(){
 	var app = angular.module('user', []);
 
-	app.controller('UserCtrl', ['$http','$scope', function($http, $scope){
-		this.addSkills = false;
+	app.controller('UserCtrl', ['$http','$scope','$rootScope', function($http, $scope, $rootScope){
+		$scope.addSkills = true;
 
 		//$scope.
-		this.canEdit = false;
-		this.canVote = true;
+		
+		$rootScope.canVote = false;
+		var obj = $scope;
+
+		console.log("obj1=",obj.canVote)
+		$scope.voteClick = function(){
+			$scope.canVote = $rootScope.canVote = obj.canVote? false: true;
+			//alert("obj="+obj.canVote);
+			console.log("obj2=",obj.canVote)
+			//alert("true");
+		};
 		$scope.actitudes = '/static/js/user-actitudes.json';
 		$scope.aptitudes = '/static/js/user-aptitudes.json';
 	}]);
@@ -16,14 +25,17 @@
 			restrict: 'E',
 			templateUrl: '/static/directives/feature-list.html',
 			scope:{
-				info: '='
+				info: '=',
+				canVote: '@canVote' 				
 			},
 			controller: ['$http','$scope', function($http, $scope){
-				var user = this,
-					skills = this,
+				var user = $scope,
+					skills = $scope,
 					skill = {};
 
+				$scope.canEdit = true;
 
+					
 				//alert('Data type=', $scope.info);
 				user.data = [];
 				//debugger;
@@ -36,18 +48,19 @@
 
 				
 
-				this.showSkills = function(){
+				$scope.showSkills = function(){
 					skills.addSkills = skills.addSkills? false: true;
 				};
 
-				this.addSkill = function(name){
+				$scope.addSkill = function(name){
 					//debugger;
+					user.data.actitudes = user.data.actitudes ? user.data.actitudes:[];
 					user.data.actitudes.push({
 						name: name,
 						value: "80%"
 					});
-					this.skill.name = "";
-					debugger;
+					setTimeout("setSlider()", 100);
+					$scope.skill.name = "";
 					skills.addSkills = false;
 				}
 			}],

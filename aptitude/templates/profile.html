@@ -1,20 +1,21 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
-	<div class="row" ng-app="user" ng-controller="UserCtrl as userCtrl">
+<div ng-app="user" ng-controller="UserCtrl">
+<div class="row">
 	<div class="col-md-2 small-text" >
 		<div class="picture thumbnail">
-		<img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg">
-		<span>
-		{{username}}
-		</span>
+			<img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg">
+			<span>
+				{{username}}
+			</span>
 		</div>
 		<dl>
 			<dt>Ciudad {% verbatim {%} {{user.otro}}{% endverbatim {%}</dt>
 			<dd>Madrid </dd>
 			<dt>Web </dt>
 			<dd><a href="#">rauljimenez.info</a></dd>
-			<dt>Redes</dt>
+			<dt>Redes </dt>
 			<dd>
 				<ul class="social-networks">
 					<li>
@@ -43,54 +44,55 @@
 	</div>
 	<div class="col-md-5">
 		<h1>Conocimientos</h1>
-		<feature-list info="actitudes"></feature-list>
+		<feature-list info="actitudes" can-vote="{% verbatim {%}{{canVote}}{% endverbatim {%}"></feature-list>
 	</div>
 	<div class="col-md-5">
 		<h1>Actitudes</h1>
-		<feature-list info="aptitudes"></feature-list>
+		<feature-list info="aptitudes" can-vote="{% verbatim {%}{{canVote}}{% endverbatim {%}"></feature-list>
 	</div>
 </div>
 <div class="row">
 	<div class="col-md-offset-2 col-md-10 small-text panel panel-default">
-	<div class=" panel-body">
-	Este perfil ha sido generado como el promedio de la imagen que tienen *24* personas de Raúl Jiménez Ortega.
-	<ul class="people unstyled">
-		<li> 
-			<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
-		</li>
-		<li> 
-			<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
-		</li>
-		<li> 
-			<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
-		</li>
-		<li> 
-			<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
-		</li>
-		<li> 
-			<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
-		</li>
-		<li> 
-			<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
-		</li>
-		<li> 
-			<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
-		</li>
-		<li> 
-			<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
-		</li>
-		<li> 
-			<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
-		</li>
-		<li> 
-			<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
-		</li>
-		<li>
-		<a href="https://github.com/designmodo/Flat-UI/archive/master.zip" class="btn btn-primary btn-lg btn-block vote">Vota</a>
-		</li>
-		</ul>
+		<div class=" panel-body">
+			Este perfil ha sido generado como el promedio de la imagen que tienen *24* personas de Raúl Jiménez Ortega.
+			<ul class="people unstyled">
+				<li> 
+					<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
+				</li>
+				<li> 
+					<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
+				</li>
+				<li> 
+					<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
+				</li>
+				<li> 
+					<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
+				</li>
+				<li> 
+					<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
+				</li>
+				<li> 
+					<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
+				</li>
+				<li> 
+					<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
+				</li>
+				<li> 
+					<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
+				</li>
+				<li> 
+					<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
+				</li>
+				<li> 
+					<a href="#"><img src="https://pbs.twimg.com/profile_images/378800000613334751/94f948347b9ec15471b0828827ff27e9.jpeg"></a>
+				</li>
+				<li>
+					<span ng-click="voteClick()" class="btn btn-primary btn-lg btn-block vote">Vota</span>
+				</li>
+			</ul>
 		</div>
 	</div>
+</div>
 </div>
 
 <script src="{% static 'js/profile.js' %}"></script>
